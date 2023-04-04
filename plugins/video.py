@@ -91,6 +91,12 @@ async def vplay(c: Client, m: Message):
             + "\n\n» ❌ __Delete messages__\n\nOnce done, try again."
         )
         return
+    if not a.can_restrict_members:
+        await m.reply_text(
+            "💡 To use me, Give me the following permission below:"
+            + "\n\n» ❌ __Ban Users__\n\nOnce done, try again."
+        )
+        return
     if not a.can_invite_users:
         await m.reply_text(
             "💡 To use me, Give me the following permission below:"
